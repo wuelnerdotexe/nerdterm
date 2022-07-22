@@ -39,7 +39,7 @@ function! nerdterm#create() abort
   call nerdterm#options()
 endfunction
 
-function! terminal#open() abort
+function! nerdterm#open() abort
   execute 'botright' . float2nr(&lines * 0.25) . 'new'
   let s:terminfo.win_id = win_getid()
   try
