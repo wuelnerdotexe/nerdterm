@@ -1,6 +1,6 @@
 # The NERDTerm
 
-The NERDTerm is a terminal toggle function for the Vim editor.
+The NERDTerm is a terminal toggle plugin for the Vim editor.
 
 ## Installation
 
@@ -9,6 +9,22 @@ Install via your preferred package manager. Example using [vim-plug](https://git
 ```vim
 Plug 'wuelnerdotexe/nerdterm'
 ```
+
+## Usage
+
+NERDTerm provides only and exclusively one command:
+
+```vim
+:NERDTermToggle
+```
+
+Which you can map to your favorite map, for example:
+
+```vim
+nmap <leader>tt <Plug>(NERDTermToggle)
+```
+
+Or by default, only if `<Plug>(NERDTermToggle)` has not been mapped you can use Ctrl + ` to use NERDTerm.
 
 ## Maintainer
 
