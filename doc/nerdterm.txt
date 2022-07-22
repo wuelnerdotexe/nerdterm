@@ -1,0 +1,15 @@
+*nerdterm.txt*	For Vim version 8.0	Last change: 2022 Jul 22
+
+
+		Toggle Terminal Window
+
+
+
+:NERDTerm							*:NERDTerm*
+								*CTRL-`*
+
+Start or toggle visibility of the terminal window.
+
+
+
+ vim:tw=78:ts=8:sw=0:ft=help:fo=tcq2:ai:
