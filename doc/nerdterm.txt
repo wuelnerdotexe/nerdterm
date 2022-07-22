@@ -5,11 +5,18 @@
 
 
 
-:NERDTerm							*:NERDTerm*
 								*CTRL-`*
+:NERDTerm							*:NERDTerm*
 
 Start or toggle visibility of the terminal window.
 
 
+It is possible to override the CTRL-` mapping by mapping to
+`<Plug>(NERDTermToggle)`.  For example, to change the mapping to CTRL-|: >
+
+	:noremap <C-\|> <Plug>(NERDTermToggle)
+	:noremap! <C-\|> <Plug>(NERDTermToggle)
+	:tnoremap <C-\|> <Plug>(NERDTermToggle)
+<
 
  vim:tw=78:ts=8:sw=0:ft=help:fo=tcq2:ai:
