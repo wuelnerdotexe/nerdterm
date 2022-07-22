@@ -8,3 +8,13 @@
 " -----------------------------------------------------------------------------
 
 command -nargs=0 NERDTermToggle call nerdterm#toggle()
+
+noremap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
+noremap! <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
+tnoremap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
+
+if !hasmapto('<Plug>(NERDTermToggle)')
+	noremap <C-`> <Plug>(NERDTermToggle)
+	noremap! <C-`> <Plug>(NERDTermToggle)
+	tnoremap <C-`> <Plug>(NERDTermToggle)
+endif
