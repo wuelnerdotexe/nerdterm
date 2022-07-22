@@ -16,6 +16,6 @@ Plug 'wuelnerdotexe/nerdterm'
 
 ## License
 
-[MIT &copy; Wuelner Martínez.](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
+[MIT &copy; Wuelner Martínez.](https://github.com/wuelnerdotexe/nerdterm/blob/main/LICENSE)
 
 <p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p>
