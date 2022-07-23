@@ -1,19 +1,21 @@
-*NERDTerm.txt* A terminal toggle plugin to rule the Vim world. Bwahahaha!!.
+*NERDTerm.txt* A terminal toggle plugin to rule the Vim world. Bwahahaha!!
 
 ==============================================================================
 
 1. Usage                                                      *nerdterm-usage*
 
 NERDTerm provides only and exclusively one command:
-
-`:NERDTermToggle`
-
+>
+	:NERDTermToggle
+<
 Which you can map to your favorite map, for example:
-
-`nmap <leader>tt <Plug>(NERDTermToggle)`
-
-Or by default, only if `<Plug>(NERDTermToggle)` has not been mapped you can use Ctrl + ` to use NERDTerm.
+>
+	:nmap <leader>tt <Plug>(NERDTermToggle)
+	:nmap! <leader>tt <Plug>(NERDTermToggle)
+<
+Or by default, only if `<Plug>(NERDTermToggle)` has not been mapped you can
+use CTRL-` to use NERDTerm.
 
 ==============================================================================
 
-vim:textwidth=78:tabstop=8:filetype=help:
+ vim:textwidth=78:tabstop=8:filetype=help:
