@@ -28,7 +28,6 @@ function! nerdterm#removeEmptyBuffers() abort
   endif
 endfunction
 
-
 function! nerdterm#create() abort
   if has('nvim')
     call termopen($SHELL)

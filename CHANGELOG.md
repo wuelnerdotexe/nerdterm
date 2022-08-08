@@ -20,4 +20,4 @@ By default, create mappings to control with Ctrl + `.
 
 - Initial release
 
-<p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p>
+<p align="center">With 💖 from <strong>LATAM</strong> to the world!</p>

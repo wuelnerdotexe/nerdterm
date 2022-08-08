@@ -2,6 +2,11 @@
 
 The NERDTerm is a terminal toggle plugin for the Vim editor.
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wuelnerdotexe/nerdterm/main/assets/nerdterm.png">
+  <strong>Theme:</strong> <a href="https://wuelnerdotexe.github.io/enfocado">Enfocado</a> Dark Nature.
+</div>
+
 ## Installation
 
 Install via your preferred package manager. Example using [vim-plug](https://github.com/junegunn/vim-plug):
@@ -29,10 +34,10 @@ Or by default, only if `<Plug>(NERDTermToggle)` has not been mapped you can use 
 
 ## Maintainer
 
-> Hola 👋, soy **[Wuelner](https://linktr.ee/wuelnerdotexe)**, un **software developer de Guatemala**, apasionado por crear soluciones minimalistas utilizando fundamentos sólidos enfocados en **"cómo deben ser las cosas"**.
+> Hi 👋, I'm **[Wuelner](https://linktr.ee/wuelnerdotexe)**, a **software developer from Guatemala**, passionate about creating minimalist solutions using solid fundamentals focused on **"how things should be"**.
 
 ## License
 
 [MIT &copy; Wuelner Martínez.](https://github.com/wuelnerdotexe/nerdterm/blob/main/LICENSE)
 
-<p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p>
+<p align="center">With 💖 from <strong>LATAM</strong> to the world!</p>
