@@ -27,10 +27,8 @@ Which you can map to your favorite map, for example:
 
 ```vim
 nmap <leader>tt <Plug>(NERDTermToggle)
-nmap! <leader>tt <Plug>(NERDTermToggle)
+tmap <leader>tt <Plug>(NERDTermToggle)
 ```
-
-Or by default, only if `<Plug>(NERDTermToggle)` has not been mapped you can use CTRL-` to use NERDTerm.
 
 ## Maintainer
 

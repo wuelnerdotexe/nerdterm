@@ -7,14 +7,8 @@
 " About:    A term toggle plugin for vim.
 " -----------------------------------------------------------------------------
 
-command -nargs=0 NERDTermToggle call nerdterm#toggle()
+command NERDTermToggle call nerdterm#Toggle()
 
-noremap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
-noremap! <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
-tnoremap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
+nmap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
+tmap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
 
-if !hasmapto('<Plug>(NERDTermToggle)')
-	noremap <C-`> <Plug>(NERDTermToggle)
-	noremap! <C-`> <Plug>(NERDTermToggle)
-	tnoremap <C-`> <Plug>(NERDTermToggle)
-endif

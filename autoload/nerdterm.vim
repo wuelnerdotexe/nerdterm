@@ -7,7 +7,8 @@
 " About:    A term toggle plugin for vim.
 " -----------------------------------------------------------------------------
 
-function! nerdterm#options() abort
+function! s:SetOptions() abort
+  setlocal filetype=nerdterm
   setlocal nobuflisted
   setlocal signcolumn=no
   setlocal nospell
@@ -18,57 +19,70 @@ function! nerdterm#options() abort
   setlocal nolist
 endfunction
 
-function! nerdterm#removeEmptyBuffers() abort
-  let l:buffers = filter(
-        \ range(1, bufnr('$')),
-        \ 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0 && !getbufvar(v:val, "&mod")'
-        \ )
+function! s:RemoveEmptyBuffers() abort
+  let l:buffers = filter(range(1, bufnr('$')),
+        \ 'buflisted(v:val)'.
+        \   ' && empty(bufname(v:val))'.
+        \   ' && bufwinnr(v:val)<0'.
+        \   ' && !getbufvar(v:val, "&mod")')
+
   if !empty(l:buffers)
     silent! execute 'bwipeout ' . join(l:buffers, ' ')
   endif
 endfunction
 
-function! nerdterm#create() abort
+function! s:CreateTerm() abort
   if has('nvim')
     call termopen($SHELL)
   else
     terminal ++curwin
   endif
+
   let s:terminfo.buffer_id = bufnr('')
-  call nerdterm#options()
+
+  call <SID>SetOptions()
 endfunction
 
-function! nerdterm#open() abort
+function! s:OpenTerm() abort
   execute 'botright' . float2nr(&lines * 0.25) . 'new'
+
   let s:terminfo.win_id = win_getid()
+
   try
     execute 'buffer' s:terminfo.buffer_id
   catch
-    call nerdterm#create()
+    call <SID>CreateTerm()
   endtry
-  call nerdterm#removeEmptyBuffers()
+
+  call <SID>RemoveEmptyBuffers()
+
   let s:terminfo.state = 'opened'
+
   startinsert!
 endfunction
 
-function! nerdterm#close() abort
+function! s:CloseTerm() abort
   if win_gotoid(s:terminfo.win_id)
     let s:terminfo.win_id = win_getid()
+
     hide
-    call nerdterm#removeEmptyBuffers()
+
+    call <SID>RemoveEmptyBuffers()
   endif
+
   let s:terminfo.state = 'closed'
 endfunction
 
-function! nerdterm#toggle() abort
+function! nerdterm#Toggle() abort
   if !exists('s:terminfo') || bufnr(s:terminfo.buffer_id) == -1
     let s:terminfo = { 'win_id': -1, 'buffer_id': -1, 'state': 'closed' }
   elseif getbufinfo(s:terminfo.buffer_id)[0].windows == []
     let s:terminfo.state = 'closed'
   endif
+
   if s:terminfo.state == 'opened'
-    call nerdterm#close()
+    call <SID>CloseTerm()
   elseif s:terminfo.state == 'closed'
-    call nerdterm#open()
+    call <SID>OpenTerm()
   endif
 endfunction

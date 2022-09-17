@@ -11,10 +11,7 @@ NERDTerm provides only and exclusively one command:
 Which you can map to your favorite map, for example:
 >
 	:nmap <leader>tt <Plug>(NERDTermToggle)
-	:nmap! <leader>tt <Plug>(NERDTermToggle)
-<
-Or by default, only if `<Plug>(NERDTermToggle)` has not been mapped you can
-use CTRL-` to use NERDTerm.
+	:tmap <leader>tt <Plug>(NERDTermToggle)
 
 ==============================================================================
 
