@@ -9,6 +9,5 @@
 
 command NERDTermToggle call nerdterm#Toggle()
 
-nmap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
-tmap <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
+map <Plug>(NERDTermToggle) <Cmd>NERDTermToggle<CR>
 
