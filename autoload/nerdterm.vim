@@ -16,6 +16,7 @@ function! s:SetOptions() abort
   setlocal norelativenumber
   setlocal noruler
   setlocal nocursorline
+  setlocal colorcolumn=
   setlocal nolist
 endfunction
 
@@ -57,8 +58,6 @@ function! s:OpenTerm() abort
   call <SID>RemoveEmptyBuffers()
 
   let s:terminfo.state = 'opened'
-
-  startinsert!
 endfunction
 
 function! s:CloseTerm() abort
