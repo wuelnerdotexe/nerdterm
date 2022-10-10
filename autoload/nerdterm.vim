@@ -58,6 +58,8 @@ function! s:OpenTerm() abort
   call <SID>RemoveEmptyBuffers()
 
   let s:terminfo.state = 'opened'
+
+  startinsert!
 endfunction
 
 function! s:CloseTerm() abort
