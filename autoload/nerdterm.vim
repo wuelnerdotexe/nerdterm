@@ -1,24 +1,11 @@
 " vim: fileencoding=utf-8 tabstop=2 shiftwidth=2 foldlevel=0 foldmethod=marker:
 " -----------------------------------------------------------------------------
-" Name:     nerdterm.vim
+" Name:     autoload/nerdterm.vim
 " Author:   Wuelner Martínez <wuelner.martinez@outlook.com>
 " URL:      https://github.com/wuelnerdotexe/human.vim
 " License:  MIT (C) Wuelner Martínez.
 " About:    A term toggle plugin for vim.
 " -----------------------------------------------------------------------------
-
-function! s:SetOptions() abort
-  setlocal filetype=nerdterm
-  setlocal nobuflisted
-  setlocal signcolumn=no
-  setlocal nospell
-  setlocal nonumber
-  setlocal norelativenumber
-  setlocal noruler
-  setlocal nocursorline
-  setlocal colorcolumn=
-  setlocal nolist
-endfunction
 
 function! s:RemoveEmptyBuffers() abort
   let l:buffers = filter(range(1, bufnr('$')),
@@ -41,7 +28,7 @@ function! s:CreateTerm() abort
 
   let s:terminfo.buffer_id = bufnr('')
 
-  call <SID>SetOptions()
+  setlocal filetype=nerdterm nobuflisted
 endfunction
 
 function! s:OpenTerm() abort
@@ -85,3 +72,15 @@ function! nerdterm#Toggle() abort
     call <SID>OpenTerm()
   endif
 endfunction
+
+function! nerdterm#SetOptions() abort
+  setlocal signcolumn=no
+  setlocal nospell
+  setlocal nonumber
+  setlocal norelativenumber
+  setlocal noruler
+  setlocal nocursorline
+  setlocal colorcolumn=
+  setlocal nolist
+endfunction
+
